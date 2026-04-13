@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-fixed-dim": "#b9c8de",
+                        "on-secondary-fixed": "#111c2d",
+                        "surface-variant": "#353436",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-tertiary-container": "#c7c9cb",
+                        "on-primary-container": "#bbcae0",
+                        "primary-container": "#475568",
+                        "surface-container-highest": "#353436",
+                        "on-surface-variant": "#c4c6cd",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#3e495d",
+                        "on-secondary-container": "#aeb9d0",
+                        "primary-fixed": "#d4e4fa",
+                        "surface": "#131314",
+                        "on-secondary": "#263143",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e3",
+                        "on-primary": "#233143",
+                        "background": "#131314",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "outline": "#8e9197",
+                        "secondary": "#bcc7de",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-on-surface": "#313031",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e3",
+                        "on-primary-fixed-variant": "#39485a",
+                        "inverse-primary": "#516072",
+                        "tertiary": "#c4c7c9",
+                        "secondary-fixed": "#d8e3fb",
+                        "tertiary-fixed": "#e0e3e5",
+                        "primary": "#b9c8de",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "outline-variant": "#44474c",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-primary-fixed": "#0d1c2d",
+                        "surface-tint": "#b9c8de",
+                        "on-tertiary": "#2d3133",
+                        "surface-bright": "#3a393a",
+                        "tertiary-container": "#525557",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-dim": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .tonal-nesting {
+            background-color: #1c1b1c;
+        }
+        .glass-panel {
+            background: rgba(53, 52, 54, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-primary">
+<!-- TopNavBar -->
+<nav class="w-full h-16 sticky top-0 z-50 bg-[#131314] dark:bg-[#131314] border-b border-[#44474c]/15 shadow-[0_16px_32px_-12px_rgba(229,226,227,0.04)] flex justify-between items-center px-8 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#b9c8de]">ClipSorter</span>
+<div class="hidden md:flex gap-6">
+<a class="text-[#c4c6cd] font-medium font-manrope tracking-tight text-lg hover:text-[#b9c8de] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#c4c6cd] font-medium font-manrope tracking-tight text-lg hover:text-[#b9c8de] transition-colors duration-200" href="#">Analytics</a>
+<a class="text-[#c4c6cd] font-medium font-manrope tracking-tight text-lg hover:text-[#b9c8de] transition-colors duration-200" href="#">Team</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#b9c8de]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="active:scale-95 transition-transform text-[#b9c8de]">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Creator profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a creative professional man in a dark studio setting with soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMXcVh6evkf1XNl66FmfxBDH_UXeh0Zs8NZgtiZDgq45bc_6IaSx_2a5VfFNgqGCwywpFctKZIYpUTgpWtmZ_JBs7Eyp15wmzZ7B_8qz4OvoSwbZw664NT7medKa8vr1drhhd-d2xRjN45whm9cMKgjVqxQxEX1tNN7Y6v8ToIH-3mIYSnLOyTppWCQNddUVujINUynQ-XElXXEffLB5eTGaivOpDTGn08y2aNvuSy8vKo6lKtWE4xQr8_uwep-ZgILSRdZOTO4g"/>
+</div>
+</div>
+</nav>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 tonal-nesting flex flex-col h-full py-8 px-4 z-40 hidden md:flex">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+</div>
+<div>
+<h2 class="font-manrope font-black text-[#b9c8de] tracking-widest text-xs uppercase">The Monolithic</h2>
+<p class="text-[10px] text-on-surface-variant font-medium tracking-widest uppercase">Pro Editor Suite</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 text-[#c4c6cd] hover:bg-[#201f20] transition-all duration-300 font-inter text-sm font-medium tracking-wide uppercase active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">cloud_upload</span>
+<span>Upload &amp; Tag</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 bg-[#2a2a2b] text-[#b9c8de] border-l-4 border-[#b9c8de] rounded-r-md transition-all duration-300 font-inter text-sm font-medium tracking-wide uppercase active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Find a Clip</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#c4c6cd] hover:bg-[#201f20] transition-all duration-300 font-inter text-sm font-medium tracking-wide uppercase active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">video_library</span>
+<span>Library</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#c4c6cd] hover:bg-[#201f20] transition-all duration-300 font-inter text-sm font-medium tracking-wide uppercase active:translate-x-1 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">dashboard_customize</span>
+<span>Templates</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<button class="w-full bg-[#b9c8de] text-[#233143] py-3 rounded-md font-bold text-sm uppercase tracking-widest mb-6 active:scale-95 transition-all">
+                    New Project
+                </button>
+<a class="flex items-center gap-3 px-3 py-3 text-[#c4c6cd] hover:bg-[#201f20] transition-all duration-300 font-inter text-sm font-medium tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined text-xl">person</span>
+<span>Account</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-[#c4c6cd] hover:bg-[#201f20] transition-all duration-300 font-inter text-sm font-medium tracking-wide uppercase" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 p-8 min-h-screen bg-surface">
+<header class="max-w-6xl mx-auto mb-12">
+<div class="flex flex-col gap-2 mb-8">
+<span class="font-mono text-[10px] tracking-[0.2em] text-primary uppercase">Search Engine v2.4</span>
+<h1 class="text-5xl font-extrabold font-headline tracking-tight text-on-surface">Find a Clip</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg">Input your narrative hook or tweet text. Our AI will dissect the mood and retrieve the perfect visual matches from your monolithic library.</p>
+</div>
+<!-- Search Interface Panel -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 shadow-2xl">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase ml-1">Paste Narrative / Tweet</label>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg p-4 text-on-surface placeholder:text-surface-variant focus:ring-1 focus:ring-primary/30 min-h-[120px] resize-none font-body transition-all" placeholder="Example: 'The rain didn't just fall, it hammered the pavement like a rhythmic warning of what was coming next...'"></textarea>
+</div>
+<div class="flex flex-col md:flex-row items-end justify-between gap-6">
+<div class="flex-1 w-full">
+<label class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase ml-1 mb-2 block">Visual Mood Profile</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary text-primary text-xs font-bold tracking-wide uppercase transition-all">All Moods</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-on-surface-variant text-xs font-bold tracking-wide uppercase hover:border-primary/50 transition-all">Energetic</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-on-surface-variant text-xs font-bold tracking-wide uppercase hover:border-primary/50 transition-all">Dark</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-on-surface-variant text-xs font-bold tracking-wide uppercase hover:border-primary/50 transition-all">Cinematic</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-on-surface-variant text-xs font-bold tracking-wide uppercase hover:border-primary/50 transition-all">Melancholic</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/30 text-on-surface-variant text-xs font-bold tracking-wide uppercase hover:border-primary/50 transition-all">Cyberpunk</button>
+</div>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-md font-black uppercase tracking-widest flex items-center gap-3 shadow-lg hover:brightness-110 active:scale-95 transition-all w-full md:w-auto justify-center">
+<span class="material-symbols-outlined">analytics</span>
+                                Find Clips
+                            </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Results Section -->
+<section class="max-w-6xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-xl font-bold flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                        Search Results
+                        <span class="text-on-surface-variant font-mono text-xs font-normal ml-2 opacity-50">(24 matches found)</span>
+</h3>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">view_list</span></button>
+</div>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Result Card 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img alt="Rainy street thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="cinematic shot of rain falling on a dark city street at night with neon lights reflecting in puddles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWdEgu5-QdY4el2LPPSgoGjktN-YpeZv5J1kRE9qRYiUmqwp1_OTAmitgs44-YX1AmtrDwmqcG6h77tSXgIMZOkK6IXHqaMyiOaOZ-pPvKWs_FWNJO3txpVNrjk3b3ZcvxtEsBB33RuRaGZHsfkECF5UDvuLzetOEVZQrBqgH9LawIBX8hrYdf1LyGql7epWN-UwwfmlyM0ygnFLF_vKlJ2LOaI8SZxXkBphNFzJf4n1RCAuXt9imVBfzkuCgM7soWLeDKOHiVuQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-on-surface">00:12:04</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-on-surface">4K PRORES</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Rain_Street_Sequence_01.mp4</h4>
+<p class="text-[10px] text-on-surface-variant font-mono uppercase tracking-tighter">Created: Oct 24, 2023</p>
+</div>
+</div>
+<!-- Metadata Tags -->
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Mood: Dark</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Action: Walking</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Subject: City</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Style: Noir</span>
+</div>
+<div class="mt-auto flex gap-2 pt-4 border-t border-outline-variant/10">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container py-2.5 rounded hover:bg-surface-variant transition-colors text-[10px] font-bold uppercase tracking-widest text-on-surface">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                    Copy Filename
+                                </button>
+<button class="w-12 flex items-center justify-center bg-primary-container text-primary rounded hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">add_to_drive</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Result Card 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img alt="Abstract high tech visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="abstract digital light trails in a dark void with sharp cyan and magenta streaks and lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdbYXRYpoWohAgOek5LNemO_A3MwoKTMdpL8tXvNM2KOc0AiABUf_I7Si4QN9qnZWvvYn2IpMBADu0TutMVnyqOduKvyBQlYlv2hb8E21DUoXf02G9KGARjTp6TUMwdz5tmQMU05I2lgShNGtaTYNTUb0uKIiUO-lXoWJYDGDsa8khtz1aBgYPbm3053knt-ub2L6IRpHsgEd928wzRosPbeWRS-D4KKy5MYfayX5czE_ETx5ose9zZfkLUL5ZexAHRcNXx-uFJw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-on-surface">00:08:15</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-on-surface">8K RAW</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Digital_Aura_FX_V2.mov</h4>
+<p class="text-[10px] text-on-surface-variant font-mono uppercase tracking-tighter">Created: Nov 12, 2023</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Mood: Energetic</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Setting: Void</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Style: Cyber</span>
+</div>
+<div class="mt-auto flex gap-2 pt-4 border-t border-outline-variant/10">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container py-2.5 rounded hover:bg-surface-variant transition-colors text-[10px] font-bold uppercase tracking-widest text-on-surface">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                    Copy Filename
+                                </button>
+<button class="w-12 flex items-center justify-center bg-primary-container text-primary rounded hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">add_to_drive</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Result Card 3 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-300 flex flex-col">
+<div class="relative aspect-video overflow-hidden">
+<img alt="Cinematic landscape" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="dramatic mountain range at dusk with a deep blue sky and the first few stars appearing above snow peaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHFBAeGdcQEUEgu0soPgwFI2CWPrjOAPzGAmiKI2ISojGhw4rfVdBz4UBwHSuWbjRICgpB88grUh7DjzmP9_oS0glikU7T8ieHa7-zyX9NPnsiQ4Cb2xR5Gfx2JU2NhYzZGlAGAcBXX81uhtuVxbUHAM3Titf2s1GGSVgoYM-sQ9hjj9kNPEb-g4VlhsXrA42ppTpHoK3D6ANRYGFO07creYTBkGpsl2Fpkm16efX8lE_MOaHwhPcchBPUVgxn9e9DZgNYqGPmzQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-on-surface">00:30:00</span>
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-on-surface">4K PRORES</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Mountain_Dusk_Wide.mp4</h4>
+<p class="text-[10px] text-on-surface-variant font-mono uppercase tracking-tighter">Created: Sep 05, 2023</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Mood: Cinematic</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Action: Pan</span>
+<span class="text-[9px] font-bold bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant uppercase tracking-wider">Subject: Nature</span>
+</div>
+<div class="mt-auto flex gap-2 pt-4 border-t border-outline-variant/10">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container py-2.5 rounded hover:bg-surface-variant transition-colors text-[10px] font-bold uppercase tracking-widest text-on-surface">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                    Copy Filename
+                                </button>
+<button class="w-12 flex items-center justify-center bg-primary-container text-primary rounded hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">add_to_drive</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 border border-outline-variant/20 rounded-md text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant hover:border-primary/50 hover:text-on-surface transition-all">
+                        Load More Assets
+                    </button>
+</div>
+</section>
+</main>
+</div>
+<!-- Floating Action Feedback (Subtle) -->
+<div class="fixed bottom-6 right-6 z-50">
+<div class="glass-panel px-6 py-3 rounded-full border border-outline-variant/20 shadow-2xl flex items-center gap-4">
+<span class="w-2 h-2 rounded-full bg-[#b9c8de] animate-pulse"></span>
+<span class="text-xs font-mono uppercase tracking-wider text-on-surface">System Ready. Library Synced.</span>
+</div>
+</div>
+</body></html>

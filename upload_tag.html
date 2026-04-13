@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClipSorter - Upload &amp; Tag</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-fixed-dim": "#b9c8de",
+                        "on-secondary-fixed": "#111c2d",
+                        "surface-variant": "#353436",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-tertiary-container": "#c7c9cb",
+                        "on-primary-container": "#bbcae0",
+                        "primary-container": "#475568",
+                        "surface-container-highest": "#353436",
+                        "on-surface-variant": "#c4c6cd",
+                        "inverse-surface": "#e5e2e3",
+                        "secondary-container": "#3e495d",
+                        "on-secondary-container": "#aeb9d0",
+                        "primary-fixed": "#d4e4fa",
+                        "surface": "#131314",
+                        "on-secondary": "#263143",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e3",
+                        "on-primary": "#233143",
+                        "background": "#131314",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "outline": "#8e9197",
+                        "secondary": "#bcc7de",
+                        "surface-container-lowest": "#0e0e0f",
+                        "inverse-on-surface": "#313031",
+                        "surface-container-low": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e3",
+                        "on-primary-fixed-variant": "#39485a",
+                        "inverse-primary": "#516072",
+                        "tertiary": "#c4c7c9",
+                        "secondary-fixed": "#d8e3fb",
+                        "tertiary-fixed": "#e0e3e5",
+                        "primary": "#b9c8de",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "outline-variant": "#44474c",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-primary-fixed": "#0d1c2d",
+                        "surface-tint": "#b9c8de",
+                        "on-tertiary": "#2d3133",
+                        "surface-bright": "#3a393a",
+                        "tertiary-container": "#525557",
+                        "surface-container": "#201f20",
+                        "surface-container-high": "#2a2a2b",
+                        "surface-dim": "#131314"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mono-precision {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: "tnum", "onum";
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- SideNavBar (The Anchor) -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-8 px-4 bg-[#1c1b1c] dark:bg-[#1c1b1c] tonal-nesting">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+</div>
+<div>
+<h1 class="font-manrope font-black text-[#b9c8de] tracking-widest text-lg">CLIPSORTER</h1>
+<p class="text-[10px] font-inter text-on-surface-variant tracking-[0.2em] uppercase opacity-60">Pro Editor Suite</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Upload & Tag -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#2a2a2b] text-[#b9c8de] border-l-4 border-[#b9c8de] rounded-r-md font-inter text-sm font-medium tracking-wide uppercase cursor-pointer transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+<span>Upload &amp; Tag</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#c4c6cd] hover:bg-[#201f20] font-inter text-sm font-medium tracking-wide uppercase cursor-pointer transition-all active:translate-x-1 hover:bg-[#353436] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span>Find a Clip</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#c4c6cd] hover:bg-[#201f20] font-inter text-sm font-medium tracking-wide uppercase cursor-pointer transition-all active:translate-x-1 hover:bg-[#353436] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+<span>Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#c4c6cd] hover:bg-[#201f20] font-inter text-sm font-medium tracking-wide uppercase cursor-pointer transition-all active:translate-x-1 hover:bg-[#353436] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard_customize">dashboard_customize</span>
+<span>Templates</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/10">
+<button class="w-full mb-6 bg-primary text-on-primary font-bold py-3 rounded-md font-inter text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
+                New Project
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-[#c4c6cd] font-inter text-xs font-medium tracking-wide uppercase hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+<span>Account</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#c4c6cd] font-inter text-xs font-medium tracking-wide uppercase hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Stage -->
+<main class="ml-64 min-h-screen bg-surface">
+<!-- Top Nav (The Identity) -->
+<header class="w-full h-16 sticky top-0 z-50 flex justify-between items-center px-8 bg-[#131314] dark:bg-[#131314] border-b border-[#44474c]/15 shadow-[0_16px_32px_-12px_rgba(229,226,227,0.04)]">
+<div class="flex items-center gap-6">
+<h2 class="font-manrope tracking-tight font-bold text-lg text-[#b9c8de]">Upload &amp; Tag</h2>
+<div class="h-4 w-px bg-outline-variant/30"></div>
+<div class="flex gap-4">
+<span class="text-[#b9c8de] border-b-2 border-[#b9c8de] pb-1 font-medium text-sm cursor-pointer">Workspace</span>
+<span class="text-[#c4c6cd] font-medium text-sm hover:text-[#b9c8de] transition-colors duration-200 cursor-pointer">Queue</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#b9c8de] cursor-pointer hover:opacity-80 active:scale-95 transition-transform" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#b9c8de] cursor-pointer hover:opacity-80 active:scale-95 transition-transform" data-icon="settings">settings</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
+<img alt="Creator profile avatar" class="w-full h-full object-cover" data-alt="professional portrait of a creative professional with neutral expression and studio lighting on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBeKl2xylefz_7zq_kvRG6QCFhCmulTsv_4FEqEAKTI53GjBHe2WPVSxfrpsz4dVt9pOU_KFHuZwY00lMlSDFdcJ2sLQTpiwa3YoPnSFZOJ0PVsJKDmvDX2ldXXrHvX3ZkROlMFxAypRC6viFqywWsf8F-RYaO_TMSwrfyHYjyYPtj-cnHgNMvuoDDQIMbuCaM4h2Ut-NfaTMNTJUppjWP5VaqmZ1j9J2fQhpBNUgRV8lSW9zNUi4qDyhuJu6SUhC0zlAL4T8uZg"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-7xl mx-auto grid grid-cols-12 gap-8">
+<!-- Left: Upload Section (Bento Inspired) -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<!-- Large Drag-and-Drop Area -->
+<section class="relative aspect-video rounded-xl border-2 border-dashed border-outline-variant/30 bg-surface-container-low flex flex-col items-center justify-center p-12 transition-all hover:border-primary/40 group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-6 shadow-xl">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Drop your masterpiece here</h3>
+<p class="text-on-surface-variant text-sm mb-8">MP4, MOV, or WEBM up to 2GB per clip</p>
+<button class="px-8 py-3 bg-surface-container-highest text-primary border border-outline-variant/20 rounded-md font-semibold text-sm hover:bg-surface-variant transition-all active:scale-95">
+                        Browse Files
+                    </button>
+</section>
+<!-- Processing Meta Info (Asymmetric Detail) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 block font-medium">Auto-Tagging Status</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-mono-precision text-sm">AI Engine: READY</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant/10">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 block font-medium">Selected Format</span>
+<span class="font-mono-precision text-sm">PRORES 422 HQ (AUTO)</span>
+</div>
+</div>
+</div>
+<!-- Right: Preview & AI Tagger -->
+<aside class="col-span-12 lg:col-span-5 space-y-6">
+<!-- Video Preview Player -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden shadow-2xl">
+<div class="aspect-video relative bg-black group cursor-pointer">
+<img alt="Video Preview" class="w-full h-full object-cover opacity-60" data-alt="cinematic close up shot of a professional camera lens with colorful light reflections on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAzp-3PaBDhXiON7Dhswj-nt_BicPWrMQbJHDImujt-tIEcL__umDt0Pc0EutTCHVkgzN6x2Cd72oXGH8n3xfhAPhGCPuvmct1l9i7LrZ5GrceLNg2JwjFoT9YFfkzS-oIM3E_1SzgGw2pm5nlH9qNAhxzrlRkPzBoZ6cfkm_dyR-AwJ2gd4jg3gm1Y6cRaZToW_TQnE8Xxr_gMoi5aj_bFVwT85ZV1SdyP5AD_dFwnktnl7SmUDFUvQJnZ-2UGyP_yZCBSKSYUg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl opacity-80 group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center gap-3">
+<div class="h-1 flex-1 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3 shadow-[0_0_8px_rgba(185,200,222,0.6)]"></div>
+</div>
+<span class="font-mono-precision text-[10px] text-white">02:14 / 06:45</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline font-bold text-lg">AI Suggestion</h4>
+<span class="px-2 py-1 rounded bg-primary-container/20 text-primary text-[10px] font-bold uppercase tracking-tighter">98% Match</span>
+</div>
+<!-- AI Generated Filename -->
+<div class="space-y-4">
+<div>
+<label class="text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2 font-semibold">Suggested Filename</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-none rounded-md py-4 px-4 font-mono-precision text-primary focus:ring-1 focus:ring-primary transition-all" type="text" value="cinematic_urban_night_drift_001_v2"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-sm cursor-pointer hover:text-primary" data-icon="edit">edit</span>
+</div>
+</div>
+<div>
+<label class="text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2 font-semibold">AI Generated Tags</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-on-surface text-xs rounded-full border border-outline-variant/20 hover:bg-surface-variant cursor-default">#Cinematic</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface text-xs rounded-full border border-outline-variant/20 hover:bg-surface-variant cursor-default">#Urban</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface text-xs rounded-full border border-outline-variant/20 hover:bg-surface-variant cursor-default">#4K</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface text-xs rounded-full border border-outline-variant/20 hover:bg-surface-variant cursor-default">#Motion</span>
+<button class="w-8 h-8 rounded-full border border-dashed border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-outline-variant/10 flex flex-col gap-3">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-md shadow-lg shadow-primary/10 active:scale-95 transition-all flex items-center justify-center gap-2">
+<span>Confirm Upload</span>
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</button>
+<button class="w-full py-3 text-on-surface-variant text-xs font-semibold uppercase tracking-widest hover:text-on-surface transition-colors">
+                                Save as Draft
+                            </button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>
