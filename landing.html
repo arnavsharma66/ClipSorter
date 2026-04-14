@@ -7,7 +7,7 @@
     try {
       const data = JSON.parse(token);
       if (Date.now() < data.expiresAt) {
-        window.location.href = '/app';
+        window.location.href = '/index.html';
       }
     } catch(e) {}
   }
@@ -139,7 +139,7 @@
                     Focus on creating. Let AI handle the library.
                 </p>
 <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-<a class="group relative bg-surface-tint text-on-primary px-8 py-4 rounded-md font-bold tracking-tight text-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-95" href="/app">
+<a class="group relative bg-surface-tint text-on-primary px-8 py-4 rounded-md font-bold tracking-tight text-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-95" href="/index.html">
 <span class="relative z-10">Get Started</span>
 <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </a>
