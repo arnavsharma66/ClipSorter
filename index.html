@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html class="dark" lang="en" style="overflow-x: hidden; position: relative;">
 <head>
+      <script>
+  const d = localStorage.getItem('oauth_data');
+  if (d && Date.now() < JSON.parse(d).expiresAt) location.href = '/app.html';
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ClipSorter — AI Video Organizer</title>
