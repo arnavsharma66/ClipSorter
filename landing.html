@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="overflow-x: hidden; position: relative;">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClipSorter — AI Video Organizer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#475568",
+                    "on-surface-variant": "#c4c6cd",
+                    "on-primary-fixed-variant": "#39485a",
+                    "surface": "#131314",
+                    "surface-tint": "#b9c8de",
+                    "on-primary-container": "#bbcae0",
+                    "surface-container-high": "#2a2a2b",
+                    "tertiary-container": "#525557",
+                    "surface-container-lowest": "#0e0e0f",
+                    "surface-dim": "#131314",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#0d1c2d",
+                    "surface-bright": "#3a393a",
+                    "secondary": "#bcc7de",
+                    "outline-variant": "#44474c",
+                    "primary-fixed": "#d4e4fa",
+                    "inverse-surface": "#e5e2e3",
+                    "surface-container": "#201f20",
+                    "surface-variant": "#353436",
+                    "tertiary-fixed": "#e0e3e5",
+                    "secondary-fixed": "#d8e3fb",
+                    "on-tertiary": "#2d3133",
+                    "on-tertiary-container": "#c7c9cb",
+                    "on-error": "#690005",
+                    "outline": "#8e9197",
+                    "on-surface": "#e5e2e3",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "secondary-container": "#3e495d",
+                    "primary-fixed-dim": "#b9c8de",
+                    "inverse-on-surface": "#313031",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#353436",
+                    "surface-container-low": "#1c1b1c",
+                    "on-secondary": "#263143",
+                    "tertiary": "#c4c7c9",
+                    "on-tertiary-fixed": "#191c1e",
+                    "background": "#131314",
+                    "inverse-primary": "#516072",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-secondary-fixed": "#111c2d",
+                    "on-primary": "#233143",
+                    "primary": "#b9c8de",
+                    "on-background": "#e5e2e3",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "on-secondary-container": "#aeb9d0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131314;
+            color: #e5e2e3;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(185, 200, 222, 0.08) 0%, rgba(19, 19, 20, 0) 70%);
+        }
+        .card-inner-shadow {
+            box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30" data-mode="connect">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-md border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-8 py-6 max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-12">
+<a href="#"><span class="text-xl font-bold tracking-widest text-[#e5e2e3] font-headline">ClipSorter</span></a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#c4c6cd] hover:text-[#b9c8de] transition-colors duration-300 font-manrope tracking-tight text-sm" href="#product">Product</a>
+<a class="text-[#c4c6cd] hover:text-[#b9c8de] transition-colors duration-300 font-manrope tracking-tight text-sm" href="#features">Features</a>
+<a class="text-[#c4c6cd] hover:text-[#b9c8de] transition-colors duration-300 font-manrope tracking-tight text-sm" href="#pricing">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<a class="scale-95 hover:scale-100 active:opacity-80 transition-all bg-surface-tint text-on-primary px-5 py-2 rounded-md text-sm font-semibold tracking-tight" href="/index.html">Launch App</a>
+</div>
+</div>
+</nav>
+
+<main class="relative pt-32">
+<!-- Hero Section -->
+<section class="relative px-8 overflow-hidden">
+<div class="absolute inset-0 hero-glow -z-10"></div>
+<div class="max-w-[1440px] mx-auto text-center py-24 md:py-32">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15 mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-label text-on-surface-variant font-semibold">ClipSorter Beta Now Live</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-on-surface mb-8 leading-[1.1]">
+                    AI-powered video clip organizer<br/>for social media creators.
+                </h1>
+<p class="max-w-2xl mx-auto font-body text-lg md:text-xl text-on-surface-variant mb-12 leading-relaxed">
+                    Focus on creating. Let AI handle the library.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+<a class="group relative bg-surface-tint text-on-primary px-8 py-4 rounded-md font-bold tracking-tight text-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-95" href="/index.html">
+<span class="relative z-10">Get Started</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</a>
+<a class="px-8 py-4 rounded-md font-bold tracking-tight text-lg text-on-surface hover:bg-surface-container-high transition-all border border-outline-variant/20 hover:border-outline-variant/50 cursor-pointer" onclick="alert('Demo video coming soon!')">
+                        Watch Demo
+</a>
+</div>
+</div>
+</section>
+
+<!-- Product Section -->
+<section id="product" class="py-32 px-8 bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto text-center">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-bold">The Product</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-8">Your Personal AI Video Organizer</h2>
+<p class="font-body text-on-surface-variant leading-relaxed text-xl mb-12">
+    ClipSorter is an AI-powered personal video clip organizer built for speed. You drop your short B-roll and video clips into the app. Gemini AI instantly analyzes the footage and tags them with precise <span class="text-primary font-medium">mood, action, subject, setting, and style.</span>
+</p>
+<p class="font-body text-on-surface-variant leading-relaxed text-xl">
+    They get securely stored in your personal Google Drive. When you need the perfect clip for a post, you simply paste your narrative or tweet text—ClipSorter understands the vibe and retrieves the exact visual match.
+</p>
+</div>
+</section>
+
+<!-- Process Section -->
+<section class="py-32 px-8 bg-surface-container-low relative">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-20">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-bold">The Workflow</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface">Precision by default.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="group p-8 rounded-xl bg-surface-container border border-outline-variant/5 transition-all hover:border-outline-variant/20 card-inner-shadow h-full flex flex-col">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-12 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Drop a clip</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-base">
+                            Drag and drop your raw footage. Our engine ingests video streams in real-time without skipping a frame.
+                        </p>
+<div class="mt-auto pt-12">
+<span class="font-label text-[10px] font-bold text-outline uppercase tracking-widest">Step 01 / Input</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group p-8 rounded-xl bg-surface-container border border-outline-variant/5 transition-all hover:border-outline-variant/20 card-inner-shadow h-full flex flex-col">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-12 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-4">AI tags it</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-base">
+                            Automatic mood, style, and subject detection. From camera settings to facial expressions, everything is indexed.
+                        </p>
+<div class="mt-auto pt-12">
+<span class="font-label text-[10px] font-bold text-outline uppercase tracking-widest">Step 02 / Analysis</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group p-8 rounded-xl bg-surface-container border border-outline-variant/5 transition-all hover:border-outline-variant/20 card-inner-shadow h-full flex flex-col">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-12 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="search_spark">search</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Find it instantly</h3>
+<p class="font-body text-on-surface-variant leading-relaxed text-base">
+                            Search your library with natural language. Paste your tweet, and the most resonant visual context is retrieved.
+                        </p>
+<div class="mt-auto pt-12">
+<span class="font-label text-[10px] font-bold text-outline uppercase tracking-widest">Step 03 / Retrieval</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-32 px-8 bg-surface-container-highest/20">
+<div class="max-w-[1440px] mx-auto">
+  <span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-bold text-center">Everything Included</span>
+  <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-20 text-center">Creator-first features.</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-4 block text-3xl">drag_indicator</span>
+        <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Drag &amp; Drop Upload</h3>
+        <p class="font-body text-on-surface-variant text-sm leading-relaxed">Instantly upload files with a fluid, no-friction drag-and-drop workspace.</p>
+    </div>
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-4 block text-3xl">psychology</span>
+        <h3 class="font-headline text-xl font-bold text-on-surface mb-3">AI Autotagging</h3>
+        <p class="font-body text-on-surface-variant text-sm leading-relaxed">Automatic filename generation covering mood, action, subject, setting, and style.</p>
+    </div>
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-4 block text-3xl">cloud</span>
+        <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Google Ecosystem</h3>
+        <p class="font-body text-on-surface-variant text-sm leading-relaxed">Your data remains 100% yours. Videos sync directly to your personal Google Drive and Sheets.</p>
+    </div>
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-4 block text-3xl">smart_toy</span>
+        <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Natural Language Search</h3>
+        <p class="font-body text-on-surface-variant text-sm leading-relaxed">Paste a draft tweet. The AI reads the underlying narrative and retrieves matching clips.</p>
+    </div>
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-4 block text-3xl">bolt</span>
+        <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Speed &amp; Convenience</h3>
+        <p class="font-body text-on-surface-variant text-sm leading-relaxed">Real-time mood filtering, instant inline video previews, and one-click copying for editors.</p>
+    </div>
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10">
+        <span class="material-symbols-outlined text-primary mb-4 block text-3xl">key</span>
+        <h3 class="font-headline text-xl font-bold text-on-surface mb-3">Bring Your Own Key</h3>
+        <p class="font-body text-on-surface-variant text-sm leading-relaxed">No expensive subscriptions. Plug in your own Google AI Studio key and harness the free tier.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-32 px-8 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+<div class="max-w-[700px] mx-auto text-center relative z-10">
+  <span class="font-label text-xs uppercase tracking-[0.3em] text-primary mb-4 block font-bold">Pricing</span>
+  <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-12">No subscriptions. Completely Free.</h2>
+  <div class="p-12 rounded-2xl bg-surface-container border border-primary/20 card-inner-shadow">
+    <h3 class="text-7xl font-black font-headline text-on-surface mb-2">$0<span class="text-xl text-on-surface-variant font-normal"> / forever</span></h3>
+    <p class="font-body text-on-surface-variant text-lg mb-10 pt-4 border-t border-outline-variant/10 mt-6">ClipSorter runs entirely in your browser using your existing Google accounts.</p>
+    <ul class="text-left space-y-5 mb-10">
+      <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check_circle</span> <span class="text-on-surface-variant text-base">Unlimited Google Drive Storage</span></li>
+      <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check_circle</span> <span class="text-on-surface-variant text-base">Utilize your own Gemini API Key</span></li>
+      <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">check_circle</span> <span class="text-on-surface-variant text-base">No database lock-in, 100% private</span></li>
+    </ul>
+    <a href="/index.html" class="block w-full bg-primary text-on-primary py-5 rounded-lg font-bold tracking-tight hover:scale-[1.02] transition-transform text-lg shadow-lg">Start Organizing Free</a>
+  </div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-4xl mx-auto bg-surface-tint rounded-xl p-12 md:p-20 text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-primary mb-8 tracking-tight">Open Source &amp; Community Driven</h2>
+<p class="text-on-primary/80 font-body text-lg mb-12 max-w-xl mx-auto">If you like ClipSorter, give us a star on GitHub! Join our growing community of creators and developers.</p>
+<a href="https://github.com/arnavsharma66/ClipSorter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-on-primary text-primary px-10 py-5 rounded-md font-bold tracking-tight text-xl transition-transform hover:scale-105 active:scale-95 shadow-xl">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+<span>Star on GitHub</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131314] w-full border-t border-[#44474c]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24 max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="text-sm font-black text-[#e5e2e3] font-headline tracking-widest uppercase">ClipSorter</span>
+<p class="mt-4 text-[#c4c6cd] font-inter text-xs tracking-wider uppercase opacity-60">© 2026 ClipSorter Editor. Built for the focused creator.</p>
+</div>
+<div class="flex gap-10">
+<a class="text-[#c4c6cd] hover:text-[#b9c8de] transition-colors font-inter text-xs tracking-wider uppercase opacity-80 hover:opacity-100" href="/privacy.html">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
