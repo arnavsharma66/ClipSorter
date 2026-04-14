@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
+    <script>
+  // If no valid session, redirect to landing page
+  const token = localStorage.getItem('oauth_data');
+  if (!token) {
+    window.location.href = '/landing.html';
+  } else {
+    try {
+      const data = JSON.parse(token);
+      if (Date.now() >= data.expiresAt) {
+        window.location.href = '/landing.html';
+      }
+    } catch(e) {
+      window.location.href = '/landing.html';
+    }
+  }
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ClipSorter - Pro Editor Suite</title>
